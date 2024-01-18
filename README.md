@@ -11,7 +11,7 @@ Start BFCTool pressing twice to jar executable file or start with CMD:
 java -jar BFCTool.jar
 ```
 
-Now, you're started BFCTool cmd, that will accepting these simple commands:
+Now, you're started BFCTool CMD, that will accepting these simple commands:
 ```
 extract - extracts all files from BFCs;
 save - saves files to BFCs;
@@ -37,4 +37,79 @@ In many cases, the BFCTool directory will not be created, due Windows protection
 Recommended to run CMD as Administrator and run BFCTool.jar with java.exe.
 
 Okay, let's go extract files from BFC files!!!
-At first, replace **head.bfc** header file to main directory of program (**C:/Program Files/BFCTool**) and do same, but with BFCs with numeric filename (*****number***.bfc**).
+At first, replace **head.bfc** header file to main directory of program **BFCTool** and do same, but replace BFCs with numeric filename (*****number***.bfc**) to **bfc** directory. And now, type "extract" to BFCTool CMD! Wait some time...
+
+And see main directory.
+Program created **head.cfg** file and this file contains very useful information to modify BFCs.
+
+See **ext_bfc** directory and you will see many directories. Each of those directories contains separate files that ends with *.bin. It's them! Files! You've full ability to edit these files.
+
+Okay, **ext_bfc** has been solved.
+
+Now, go solve **head.cfg** and edit it!
+
+### head.cfg guide
+CFG has default Key&Value type.
+
+CFG file has 2 chunks:
+```
+HEAD_CHUNK
+DATA_CHUNK
+```
+... and eack chunk has many items of Key&Value.
+
+'@' symbol before item means annotation item or invisible item.
+This means that this item should be ignored by the computer.
+The annotation items were invented specifically for people to understand.
+
+HEAD_CHUNK should look something like this:
+```
+NUM_FILES: *NUMBER*
+@OTHER_ITEMS: AT LEAST ONLY ANNOTATIONS
+```
+Where *NUMBER* is only short int value.
+
+DATA_CHUNK should look something like this:
+```
+SHORT_INT_FILENAME: *FILENAME*
+TYPE: *TYPE_OF_FILE*
+@OFFSET: *OFFSET_TO_FILE_IN_BFC*
+LOCATION: *LOCATION*
+@SIZE: *SIZE_OF_FILE*
+PATH: *PATH_TO_BIN_FILE*
+```
+Where *FILENAME* is only short int encoded filename;
+*TYPE_OF_FILE* is only byte int and means write file to RAM or not;
+*OFFSET_TO_FILE_IN_BFC* is int offset to specified file in BFC file;
+*LOCATION* is only byte int and contains a number of BFC file (***LOCATION*.bfc**);
+*SIZE_OF_FILE* is int size in bytes;
+*PATH* is string type and contains path from **ext_bfc** directory (for example **5.bfc/10.bin**).
+
+One such chunk has each piece (file) and each piece is separated by a blank line between each piece.
+
+### Adding a own file to BFC file
+For example we want to add a tiny picture without PPL palette: **BFCTool.pim**.
+Just replace this PIM file to any BFC folder, for example the file path: **10.bfc/BFCTool.pim**
+Type to BFCTool CMD that command:
+```
+encodefn BFCTool.pim
+```
+... and get the short int result.
+
+### Editing head.cfg:
+Add to NUM_FILES 1 (NUM_FILES++).
+Add piece of file:
+```
+SHORT_INT_FILENAME: *FILENAME*
+TYPE: 1
+LOCATION: 10
+PATH: 10.bfc/BFCTool.pim
+```
+... and make sure you created a blank lines at borders of piece.
+
+Type that command to BFCTool CMD:
+```
+save
+```
+
+BFCTool.pim file has been saved to 10.bfc.

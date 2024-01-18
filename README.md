@@ -60,7 +60,7 @@ CFG file has 2 chunks:
 HEAD_CHUNK
 DATA_CHUNK
 ```
-... and eack chunk has many items of Key&Value.
+... and each chunk has each piece (file) and each piece has Key&Value and piece is separated by a blank line between each piece.
 
 '@' symbol before item means annotation item or invisible item.
 This means that this item should be ignored by the computer.
@@ -88,8 +88,6 @@ Where *FILENAME* is only short int encoded filename;
 *LOCATION* is only byte int and contains a number of BFC file (***LOCATION*.bfc**);
 *SIZE_OF_FILE* is int size in bytes;
 *PATH_TO_BIN_FILE* is string type and contains path from **ext_bfc** directory (for example **5.bfc/10.bin**).
-
-One such chunk has each piece (file) and each piece is separated by a blank line between each piece.
 
 #### Adding a own file to BFC file
 For example we want to add a tiny picture without PPL palette: **PITR.pim**.

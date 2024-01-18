@@ -1,7 +1,7 @@
 # BFCTool
 Modify SolaRola with this simple thing!
 
-# Welcome walmart bag and whole world!
+# Welcome *walmart bag* and whole world!
 
 BFCTool is the program was designed for BFC files interaction.
 
@@ -90,22 +90,23 @@ Where *FILENAME* is only short int encoded filename;
 One such chunk has each piece (file) and each piece is separated by a blank line between each piece.
 
 #### Adding a own file to BFC file
-For example we want to add a tiny picture without PPL palette: **BFCTool.pim**.
-Just replace this PIM file to any BFC folder, for example the file path: **10.bfc/BFCTool.pim**
+For example we want to add a tiny picture without PPL palette: **PITR.pim**.
+Just replace this PIM file to any BFC folder, for example the file path: **10.bfc/PITR.pim**
 Type to BFCTool CMD that command:
 ```
-encodefn BFCTool.pim
+encodefn 27014
 ```
-... and you will get ***-13534*** value.
+... and you'll get ***27014*** short int value.
 
 #### Editing head.cfg:
 Add to NUM_FILES 1 (NUM_FILES++).
+
 Add piece of file:
 ```
-SHORT_INT_FILENAME: -13534
+SHORT_INT_FILENAME: 27014
 TYPE: 1
 LOCATION: 10
-PATH: 10.bfc/BFCTool.pim
+PATH: 10.bfc/PITR.pim
 ```
 ... and make sure you created a blank lines at borders of piece.
 
@@ -114,7 +115,7 @@ Type that command to BFCTool CMD:
 save
 ```
 
-BFCTool.pim file has been saved to 10.bfc.
+PITR.pim file has been saved to 10.bfc.
 Congrats!
 
 # Conclusion

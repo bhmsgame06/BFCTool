@@ -1,7 +1,9 @@
 # BFCTool
 Modify SolaRola with this simple thing!
 
-This program was designed for BFC files interaction.
+# Welcome walmart bag and whole world!
+
+BFCTool is the program was designed for BFC files interaction.
 
 BFC file - this is file used in SolaRola game files and this is package of many files (For example "gamelogo.pim" or "level.001.bin").
 
@@ -48,7 +50,7 @@ Okay, **ext_bfc** has been solved.
 
 Now, go solve **head.cfg** and edit it!
 
-### head.cfg guide
+#### head.cfg guide
 CFG has default Key&Value type.
 
 CFG file has 2 chunks:
@@ -87,20 +89,20 @@ Where *FILENAME* is only short int encoded filename;
 
 One such chunk has each piece (file) and each piece is separated by a blank line between each piece.
 
-### Adding a own file to BFC file
+#### Adding a own file to BFC file
 For example we want to add a tiny picture without PPL palette: **BFCTool.pim**.
 Just replace this PIM file to any BFC folder, for example the file path: **10.bfc/BFCTool.pim**
 Type to BFCTool CMD that command:
 ```
 encodefn BFCTool.pim
 ```
-... and get the short int result.
+... and you will get ***-13534*** value.
 
-### Editing head.cfg:
+#### Editing head.cfg:
 Add to NUM_FILES 1 (NUM_FILES++).
 Add piece of file:
 ```
-SHORT_INT_FILENAME: *FILENAME*
+SHORT_INT_FILENAME: -13534
 TYPE: 1
 LOCATION: 10
 PATH: 10.bfc/BFCTool.pim
@@ -113,3 +115,11 @@ save
 ```
 
 BFCTool.pim file has been saved to 10.bfc.
+Congrats!
+
+# Conclusion
+I hope you will be enjoying my program and you will be thankful to me!
+
+If you find a **bug**, tell me on Discord: BHms game#9794.
+
+Have luck and enjoy! ^⁠_⁠^

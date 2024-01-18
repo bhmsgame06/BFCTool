@@ -94,7 +94,7 @@ For example we want to add a tiny picture without PPL palette: **PITR.pim**.
 Just replace this PIM file to any BFC folder, for example the file path: **10.bfc/PITR.pim**
 Type to BFCTool CMD that command:
 ```
-encodefn 27014
+encodefn PITR.pim
 ```
 ... and you'll get ***27014*** short int value.
 
@@ -109,6 +109,8 @@ LOCATION: 10
 PATH: 10.bfc/PITR.pim
 ```
 ... and make sure you created a blank lines at borders of piece.
+
+Adding **@OFFSET** and **@SIZE** annotation items is optional. Do you want to add or not - your choice.
 
 Type that command to BFCTool CMD:
 ```

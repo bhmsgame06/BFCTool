@@ -39,7 +39,9 @@ In many cases, the BFCTool directory will not be created, due Windows protection
 Recommended to run CMD as Administrator and run BFCTool.jar with java.exe.
 
 Okay, let's go extract files from BFC files!!!
-At first, replace **head.bfc** header file to main directory of program **BFCTool** and do same, but replace BFCs with numeric filename (*****number***.bfc**) to **bfc** directory. And now, type "extract" to BFCTool CMD! Wait some time...
+
+#### Extracting a files from BFCs
+At first, move **head.bfc** header file from SolaRola JAR file to main directory of program **BFCTool** and do same, but move BFCs with numeric filename (*****number***.bfc**) to **bfc** directory. And now, type "extract" to BFCTool CMD! Wait some time...
 
 And see main directory.
 Program created **head.cfg** file and this file contains very useful information to modify BFCs.

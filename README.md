@@ -87,7 +87,7 @@ Where *FILENAME* is only short int encoded filename;
 *OFFSET_TO_FILE_IN_BFC* is int offset to specified file in BFC file;
 *LOCATION* is only byte int and contains a number of BFC file (***LOCATION*.bfc**);
 *SIZE_OF_FILE* is int size in bytes;
-*PATH* is string type and contains path from **ext_bfc** directory (for example **5.bfc/10.bin**).
+*PATH_TO_BIN_FILE* is string type and contains path from **ext_bfc** directory (for example **5.bfc/10.bin**).
 
 One such chunk has each piece (file) and each piece is separated by a blank line between each piece.
 

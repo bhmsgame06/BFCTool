@@ -114,12 +114,9 @@ PATH: 10.bfc/PITR.pim
 
 Adding **@OFFSET** and **@SIZE** annotation items is optional. Do you want to add or not - your choice.
 
-Type that command to BFCTool CMD:
-```
-save
-```
+Type "save" command to BFCTool CMD.
 
-PITR.pim file has been saved to 10.bfc.
+And... PITR.pim file has been saved to 10.bfc.
 Congrats!
 
 # Conclusion

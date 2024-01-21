@@ -91,7 +91,7 @@ Where *FILENAME* is only short int encoded filename;
 
 #### Adding a own file to BFC file
 For example we want to add a tiny picture without PPL palette: **PITR.pim**.
-Just replace this PIM file to any BFC folder, for example the file path: **10.bfc/PITR.pim**
+Just move this PIM file to any BFC folder, for example the file path: **10.bfc/PITR.pim**
 Type to BFCTool CMD that command:
 ```
 encodefn PITR.pim

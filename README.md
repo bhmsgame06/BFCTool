@@ -9,7 +9,9 @@ Updates:
 * Added "addbfc" command with parameters;
 * Updated file extracting/saving processing. Now console shows percent of progress;
 * Updated key names:
+  
   SHORT_INT_FILENAME -> SHORT_FN;
+  
   TYPE -> RAM_STATE.
 
 # Welcome *walmart bag* and whole world!

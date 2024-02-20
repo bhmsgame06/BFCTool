@@ -90,14 +90,14 @@ Where *NUMBER* is only short int value.
 DATA_CHUNK should look something like this:
 ```
 SHORT_FN=*FILENAME*
-RAM_STATE=*TYPE_OF_FILE*
+RAM_STATE=*STATE_OF_FILE_IN_MEMORY*
 #OFFSET=*OFFSET_TO_FILE_IN_BFC*
 LOCATION=*LOCATION*
 #SIZE=*SIZE_OF_FILE*
 PATH=*PATH_TO_BIN_FILE*
 ```
 Where *FILENAME* is only short int encoded filename;
-*TYPE_OF_FILE* is only byte int and means write file to RAM or not;
+*STATE_OF_FILE_IN_MEMORY* is only byte type and means write file to RAM or not (if >= 0 { write_to_RAM_for_long_use; } else { delete_from_RAM; });
 *OFFSET_TO_FILE_IN_BFC* is int offset to specified file in BFC file;
 *LOCATION* is only byte int and contains a number of BFC file (***LOCATION*.bfc**);
 *SIZE_OF_FILE* is int size in bytes;

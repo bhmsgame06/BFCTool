@@ -5,6 +5,8 @@ Modify SolaRola with this simple thing!
 Fixes:
 * Fixed head.cfg file to normal view.
 
+
+
 Updates:
 * Added "addbfc" command with parameters;
 * Updated file extracting/saving processing. Now console shows percent of progress;
@@ -13,6 +15,8 @@ Updates:
   SHORT_INT_FILENAME -> SHORT_FN;
   
   TYPE -> RAM_STATE.
+
+
 
 # Welcome *walmart bag* and whole world!
 
@@ -96,12 +100,20 @@ LOCATION=*LOCATION*
 #SIZE=*SIZE_OF_FILE*
 PATH=*PATH_TO_BIN_FILE*
 ```
+
 Where *FILENAME* is only short int encoded filename;
+
 *STATE_OF_FILE_IN_MEMORY* is only byte type and means write file to RAM or not (if >= 0 { write_to_RAM_for_long_use; } else { delete_from_RAM; });
+
 *OFFSET_TO_FILE_IN_BFC* is int offset to specified file in BFC file;
+
 *LOCATION* is only byte int and contains a number of BFC file (***LOCATION*.bfc**);
+
 *SIZE_OF_FILE* is int size in bytes;
+
 *PATH_TO_BIN_FILE* is string type and contains path from **ext_bfc** directory (for example **5.bfc/10.bin**).
+
+
 
 #### Adding a own file to BFC file
 For example we want to add a tiny picture without PPL palette: **PITR.pim**.

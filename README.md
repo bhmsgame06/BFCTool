@@ -1,6 +1,17 @@
 # BFCTool
 Modify SolaRola with this simple thing!
 
+# v0.4 Early access update
+Fixes:
+* Fixed head.cfg file to normal view.
+
+Updates:
+* Added "addbfc" command with parameters;
+* Updated file extracting/saving processing. Now console shows percent of progress;
+* Updated key names:
+  SHORT_INT_FILENAME -> SHORT_FN;
+  TYPE -> RAM_STATE.
+
 # Welcome *walmart bag* and whole world!
 
 BFCTool is the program was designed for BFC files interaction.
@@ -24,7 +35,8 @@ exit - just return to Windows cmd.
 ```
 findfn <filename> - finds and returns an index of specified file;
 find <short_int_filename> - same as findfn, but requires short int operand, not string;
-encodefn <filename> - encodes a string filename into a short int filename (looks like some type of CRC).
+encodefn <filename> - encodes a string filename into a short int filename (looks like some type of CRC);
+addbfc <new_number> - adds specified BFC file between others.
 ```
 
 From the execution of the program, if there are no BFCTool data files in **C:/Program Files** directory, program will create BFCTool folder and bfc&ext_bfc subdirectories.
@@ -62,25 +74,25 @@ DATA_CHUNK
 ```
 ... and each chunk has each piece (file) and each piece has Key&Value and piece is separated by a blank line between each piece.
 
-'@' symbol before item means annotation item or invisible item.
+'#' symbol before item means annotation item or invisible item.
 This means that this item should be ignored by the computer.
 The annotation items were invented specifically for people to understand.
 
 HEAD_CHUNK should look something like this:
 ```
-NUM_FILES: *NUMBER*
-@OTHER_ITEMS: AT LEAST ONLY ANNOTATIONS
+NUM_FILES=*NUMBER*
+#OTHER_ITEMS=AT LEAST ONLY ANNOTATIONS
 ```
 Where *NUMBER* is only short int value.
 
 DATA_CHUNK should look something like this:
 ```
-SHORT_INT_FILENAME: *FILENAME*
-TYPE: *TYPE_OF_FILE*
-@OFFSET: *OFFSET_TO_FILE_IN_BFC*
-LOCATION: *LOCATION*
-@SIZE: *SIZE_OF_FILE*
-PATH: *PATH_TO_BIN_FILE*
+SHORT_FN=*FILENAME*
+RAM_STATE=*TYPE_OF_FILE*
+#OFFSET=*OFFSET_TO_FILE_IN_BFC*
+LOCATION=*LOCATION*
+#SIZE=*SIZE_OF_FILE*
+PATH=*PATH_TO_BIN_FILE*
 ```
 Where *FILENAME* is only short int encoded filename;
 *TYPE_OF_FILE* is only byte int and means write file to RAM or not;
@@ -103,14 +115,14 @@ Add to NUM_FILES 1 (NUM_FILES++).
 
 Add piece of file:
 ```
-SHORT_INT_FILENAME: 27014
-TYPE: 1
-LOCATION: 10
-PATH: 10.bfc/PITR.pim
+SHORT_FN=27014
+RAM_STATE=1
+LOCATION=10
+PATH=10.bfc/PITR.pim
 ```
 ... and make sure you created a blank lines at borders of piece.
 
-Adding **@OFFSET** and **@SIZE** annotation items is optional. Do you want to add or not - your choice.
+Adding **#OFFSET** and **#SIZE** annotation items is optional. Do you want to add or not - your choice.
 
 Type "save" command to BFCTool CMD.
 

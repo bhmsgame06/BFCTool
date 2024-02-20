@@ -10,6 +10,7 @@ Fixes:
 Updates:
 * Added "addbfc" command with parameters;
 * Updated file extracting/saving processing. Now console shows percent of progress;
+* Filenames self-updates first time using find/findfn commands;
 * Updated key names:
   
   SHORT_INT_FILENAME -> SHORT_FN;

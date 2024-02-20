@@ -3,7 +3,8 @@ Modify SolaRola with this simple thing!
 
 # v0.4 Early access update
 Fixes:
-* Fixed head.cfg file to normal view.
+* Fixed head.cfg file to normal view;
+* Fixed the command typing.
 
 
 
